@@ -1,0 +1,14 @@
+{
+  "runtimeOptions": {
+    "tfm": "net5.0",
+    "rollForward": "latestMajor",
+    "framework": {
+      // this is not valid json :)
+      "name": "Microsoft.WindowsDesktop.App",
+      "version": "5.0.9"
+    },
+    "configProperties": {
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false
+    }
+  }
+}

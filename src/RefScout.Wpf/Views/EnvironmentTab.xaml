@@ -1,0 +1,46 @@
+﻿<UserControl
+    x:Class="RefScout.Wpf.Views.EnvironmentTab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:RefScout.Wpf.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:Background="White"
+    d:DesignHeight="450"
+    d:DesignWidth="350"
+    DataContext="{Binding Source={StaticResource VmLocator}, Path=EnvironmentTabViewModel}"
+    mc:Ignorable="d">
+    <ScrollViewer>
+        <Border Padding="10">
+            <StackPanel>
+                <TextBlock FontWeight="Bold" Text=".NET Core" />
+                <TextBlock Text="{Binding CoreEnvironmentDetails}" TextWrapping="Wrap" />
+
+                <TextBlock FontWeight="Bold" Text=".NET Framework" />
+                <TextBlock Text="{Binding FrameworkEnvironmentDetails}" TextWrapping="Wrap" />
+
+                <StackPanel Margin="0,10,0,0"
+                            Visibility="{Binding ConfigErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+                    <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                        <controls:Icon
+                            Height="12"
+                            Margin="0,0,5,0"
+                            Fit="True"
+                            Foreground="{DynamicResource Brushes.Error}"
+                            IconName="{StaticResource Icon.Error}" />
+                        <TextBlock
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brushes.Foreground}"
+                            Text="Errors while parsing config file(s)" />
+                    </StackPanel>
+                    <ScrollViewer
+                        CanContentScroll="True"
+                        HorizontalScrollBarVisibility="Visible"
+                        VerticalScrollBarVisibility="Disabled">
+                        <TextBlock Text="{Binding ConfigErrorMessage}" />
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</UserControl>

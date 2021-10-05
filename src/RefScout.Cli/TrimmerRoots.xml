@@ -1,0 +1,5 @@
+<linker>
+  <assembly fullname="System.ComponentModel.Annotations">
+    <type fullname="System.ComponentModel.DataAnnotations.RequiredAttribute" preserve="all" />
+  </assembly>
+</linker>

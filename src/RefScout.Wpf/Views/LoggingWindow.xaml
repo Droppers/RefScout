@@ -1,0 +1,81 @@
+﻿<Window
+    x:Class="RefScout.Wpf.Views.LoggingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="RefScout - Application logs"
+    Width="800"
+    Height="450"
+    DataContext="{Binding Source={StaticResource VmLocator}, Path=LoggingWindowViewModel}"
+    Style="{StaticResource WindowStyle}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="ItemsControlVirtualizedStyle" TargetType="ItemsControl">
+            <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ItemsControl">
+                        <Border
+                            Padding="{TemplateBinding Control.Padding}"
+                            Background="{TemplateBinding Panel.Background}"
+                            BorderBrush="{TemplateBinding Border.BorderBrush}"
+                            BorderThickness="{TemplateBinding Border.BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Button
+            Margin="10"
+            HorizontalAlignment="Right"
+            Command="{Binding Save}"
+            Content="Save logs to file"
+            DockPanel.Dock="Bottom"
+            Style="{StaticResource PrimaryButtonStyle}" />
+        <ItemsControl
+            x:Name="LoggingView"
+            Margin="10"
+            ItemsSource="{Binding Entries}"
+            Style="{StaticResource ItemsControlVirtualizedStyle}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="0,0,0,3">
+                        <TextBlock
+                            Width="40"
+                            Margin="0,0,10,0"
+                            FontWeight="Bold"
+                            Text="{Binding Level}"
+                            TextAlignment="Right" />
+                        <StackPanel>
+                            <TextBlock Text="{Binding Message}" />
+                            <TextBlock Text="{Binding Exception.Message}"
+                                       Visibility="{Binding Exception, Converter={StaticResource NullToVisibilityConverter}}" />
+                            <TextBlock Text="{Binding Exception.Source}"
+                                       Visibility="{Binding Exception, Converter={StaticResource NullToVisibilityConverter}}" />
+                            <TextBlock Text="{Binding Exception.TargetSite}"
+                                       Visibility="{Binding Exception, Converter={StaticResource NullToVisibilityConverter}}" />
+                            <TextBlock Text="{Binding Exception.StackTrace}"
+                                       Visibility="{Binding Exception, Converter={StaticResource NullToVisibilityConverter}}" />
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DockPanel>
+
+</Window>

@@ -1,0 +1,67 @@
+﻿<UserControl
+    x:Class="RefScout.Wpf.Views.Controls.GraphViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:RefScout.Wpf.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:svg="http://sharpvectors.codeplex.com/runtime/"
+    d:Background="White"
+    d:DesignHeight="400"
+    d:DesignWidth="600"
+    mc:Ignorable="d">
+    <DockPanel LastChildFill="True">
+        <Border
+            BorderBrush="{DynamicResource Brushes.Border}"
+            BorderThickness="0,0,0,1"
+            DockPanel.Dock="Top">
+            <StackPanel
+                Height="48"
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+                <TextBlock
+                    x:Name="CurrentZoom"
+                    Margin="5,0"
+                    VerticalAlignment="Center" />
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    VerticalAlignment="Center"
+                    Click="OnZoomOut"
+                    Icon="{StaticResource Icon.ZoomOut}" />
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    VerticalAlignment="Center"
+                    Click="OnZoomIn"
+                    Icon="{StaticResource Icon.ZoomIn}" />
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    Click="OnZoomFit"
+                    Icon="{StaticResource Icon.FitContent}" />
+            </StackPanel>
+        </Border>
+        <ScrollViewer
+            x:Name="Container"
+            Height="auto"
+            HorizontalAlignment="Stretch"
+            CanContentScroll="True"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible">
+            <svg:ZoomPanControl
+                x:Name="ZoomPanControl"
+                Background="{DynamicResource Brushes.Background}"
+                MouseDown="OnZoomPanMouseDown"
+                MouseMove="OnZoomPanMouseMove"
+                MouseUp="OnZoomPanMouseUp"
+                MouseWheel="OnZoomPanMouseWheel"
+                SizeChanged="OnSizeChanged">
+
+                <svg:SvgDrawingCanvas x:Name="SvgViewer" />
+            </svg:ZoomPanControl>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

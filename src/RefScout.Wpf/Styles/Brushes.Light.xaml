@@ -1,0 +1,186 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <SolidColorBrush x:Key="Brushes.Background">#fff</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.BackgroundHover">#edebe9</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.BackgroundFocus">#d2d0ce</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.BackgroundDisabled">#ccc</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.Foreground">#000</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ForegroundSecondary">#333</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ForegroundDisabled">#555</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.ControlBackground">#fff</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ControlDisabled">#333</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ControlBackgroundHover">#e0e0e0</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ControlBackgroundFocus">#ccc</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.Border">#ccc</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.BorderDark">#B2B2B2</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.BorderDisabled">#444</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.ScrollThumb">#d2d0ce</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ScrollThumbHover">#bebbb8</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.ScrollThumbFocus">#a19f9d</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.Info">#00A2E8</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.Success">#5FAD61</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.Warning">#D89000</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.Error">#E05353</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.LanguageCSharp">#54AD54</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.LanguageVbNet">#185C92</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.LanguageFSharp">#9568CF</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.LanguageCppCli">#6295CB</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Brushes.DotNet">#6A4097</SolidColorBrush>
+    <SolidColorBrush x:Key="Brushes.Gac">#D872E5</SolidColorBrush>
+
+    <SolidColorBrush
+        x:Key="Neutral.Black"
+        po:Freeze="True"
+        Color="#000000" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray220"
+        po:Freeze="True"
+        Color="#11100f" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray210"
+        po:Freeze="True"
+        Color="#161514" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray200"
+        po:Freeze="True"
+        Color="#1b1a19" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray190"
+        po:Freeze="True"
+        Color="#201f1e" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray180"
+        po:Freeze="True"
+        Color="#252423" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray170"
+        po:Freeze="True"
+        Color="#292827" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray160"
+        po:Freeze="True"
+        Color="#323130" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray150"
+        po:Freeze="True"
+        Color="#3b3a39" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray140"
+        po:Freeze="True"
+        Color="#484644" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray130"
+        po:Freeze="True"
+        Color="#605e5c" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray120"
+        po:Freeze="True"
+        Color="#797775" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray110"
+        po:Freeze="True"
+        Color="#8a8886" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray100"
+        po:Freeze="True"
+        Color="#979593" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray90"
+        po:Freeze="True"
+        Color="#a19f9d" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray80"
+        po:Freeze="True"
+        Color="#b3b0ad" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray70"
+        po:Freeze="True"
+        Color="#bebbb8" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray60"
+        po:Freeze="True"
+        Color="#c8c6c4" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray50"
+        po:Freeze="True"
+        Color="#d2d0ce" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray40"
+        po:Freeze="True"
+        Color="#e1dfdd" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray30"
+        po:Freeze="True"
+        Color="#edebe9" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray20"
+        po:Freeze="True"
+        Color="#f3f2f1" />
+    <SolidColorBrush
+        x:Key="Neutral.Gray10"
+        po:Freeze="True"
+        Color="#faf9f8" />
+    <SolidColorBrush
+        x:Key="Neutral.White"
+        po:Freeze="True"
+        Color="#ffffff" />
+
+    <SolidColorBrush
+        x:Key="Communication.CommunicationShade30"
+        po:Freeze="True"
+        Color="#004578" />
+    <SolidColorBrush
+        x:Key="Communication.CommunicationShade20"
+        po:Freeze="True"
+        Color="#005a9e" />
+    <SolidColorBrush
+        x:Key="Communication.CommunicationShade10"
+        po:Freeze="True"
+        Color="#106ebe" />
+    <SolidColorBrush
+        x:Key="Communication.CommunicationPrimary"
+        po:Freeze="True"
+        Color="#0078d4" />
+
+    <DropShadowEffect
+        x:Key="Depth4"
+        po:Freeze="True"
+        BlurRadius="4"
+        Direction="-90"
+        RenderingBias="Performance"
+        ShadowDepth="1"
+        Color="#edebe9" />
+    <DropShadowEffect
+        x:Key="Depth8"
+        po:Freeze="True"
+        BlurRadius="10"
+        Direction="-90"
+        Opacity="0.3"
+        RenderingBias="Performance"
+        ShadowDepth="2"
+        Color="#000" />
+    <DropShadowEffect
+        x:Key="Depth16"
+        BlurRadius="16"
+        Direction="-90"
+        RenderingBias="Performance"
+        ShadowDepth="4"
+        Color="#edebe9" />
+    <DropShadowEffect
+        x:Key="Depth64"
+        BlurRadius="64"
+        Direction="-90"
+        RenderingBias="Performance"
+        ShadowDepth="20"
+        Color="#edebe9" />
+</ResourceDictionary>

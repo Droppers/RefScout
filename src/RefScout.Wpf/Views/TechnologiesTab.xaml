@@ -1,0 +1,170 @@
+﻿<UserControl
+    x:Class="RefScout.Wpf.Views.TechnologiesTab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:RefScout.Wpf.Views.Controls"
+    xmlns:converters="clr-namespace:RefScout.Wpf.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    DataContext="{Binding Source={StaticResource VmLocator}, Path=TechnologiesTabViewModel}"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <converters:SourceLanguageToTextConverter x:Key="SourceLanguageToTextConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MinHeight="50" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" MinHeight="50" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Border
+                Height="40"
+                Padding="10"
+                Background="{DynamicResource Brushes.ControlBackground}"
+                BorderBrush="{DynamicResource Brushes.Border}"
+                BorderThickness="0,0,0,1"
+                DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <controls:Icon
+                        Width="20"
+                        Height="20"
+                        Margin="0,0,5,0"
+                        IconName="{StaticResource Icon.DotNet}" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        Text="Versions" />
+                </StackPanel>
+            </Border>
+            <ScrollViewer>
+                <ItemsControl Padding="10,0,10,5" ItemsSource="{Binding FrameworkGroups}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,10,0,0" Orientation="Vertical">
+                                <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                    <TextBlock FontWeight="Bold" Text="{Binding TargetFramework}" />
+                                </StackPanel>
+                                <ItemsControl ItemsSource="{Binding Assemblies}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock>
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{}{0} - {1}">
+                                                        <Binding Path="Name" />
+                                                        <Binding Path="ActualVersion" />
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+        <GridSplitter
+            Grid.Row="1"
+            Height="5"
+            HorizontalAlignment="Stretch"
+            Background="Transparent" />
+        <DockPanel Grid.Row="2" LastChildFill="True">
+            <Border
+                Height="40"
+                Padding="10"
+                Background="{DynamicResource Brushes.ControlBackground}"
+                BorderBrush="{DynamicResource Brushes.Border}"
+                BorderThickness="0,1,0,1"
+                DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <controls:Icon
+                        Width="16"
+                        Height="16"
+                        Margin="0,0,5,0"
+                        IconName="{StaticResource Icon.Language}" />
+                    <TextBlock FontWeight="Bold" Text="Languages" />
+                </StackPanel>
+            </Border>
+            <ScrollViewer>
+                <ItemsControl Padding="10,0,10,5" ItemsSource="{Binding LanguageGroups}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,10,0,0" Orientation="Vertical">
+                                <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                    <controls:Icon
+                                        Height="8"
+                                        Margin="0,0,8,0"
+                                        Fit="True"
+                                        SnapsToDevicePixels="True"
+                                        UseLayoutRounding="True">
+                                        <controls:Icon.Style>
+                                            <Style TargetType="controls:Icon">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Language}" Value="Unknown">
+                                                        <Setter Property="IconName"
+                                                                Value="{StaticResource Icon.Unknown}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Language}" Value="CSharp">
+                                                        <Setter Property="IconName"
+                                                                Value="{DynamicResource Icon.LanguageCSharpSmall}" />
+                                                        <Setter Property="Foreground"
+                                                                Value="{DynamicResource Brushes.LanguageCSharp}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Language}" Value="VbNet">
+                                                        <Setter Property="IconName"
+                                                                Value="{DynamicResource Icon.LanguageVbNetSmall}" />
+                                                        <Setter Property="Foreground"
+                                                                Value="{DynamicResource Brushes.LanguageVbNet}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Language}" Value="CppCli">
+                                                        <Setter Property="IconName"
+                                                                Value="{DynamicResource Icon.LanguageCppSmall}" />
+                                                        <Setter Property="Foreground"
+                                                                Value="{DynamicResource Brushes.LanguageCppCli}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Language}" Value="FSharp">
+                                                        <Setter Property="IconName"
+                                                                Value="{DynamicResource Icon.LanguageFSharpSmall}" />
+                                                        <Setter Property="Foreground"
+                                                                Value="{DynamicResource Brushes.LanguageFSharp}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Language}" Value="Default">
+                                                        <Setter Property="IconName"
+                                                                Value="{DynamicResource Icon.Unknown}" />
+                                                        <Setter Property="Foreground"
+                                                                Value="{DynamicResource Brushes.LanguageFSharp}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </controls:Icon.Style>
+                                    </controls:Icon>
+                                    <TextBlock FontWeight="Bold"
+                                               Text="{Binding Language, Converter={StaticResource SourceLanguageToTextConverter}}" />
+                                </StackPanel>
+                                <ItemsControl ItemsSource="{Binding Assemblies}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock>
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{}{0} - {1}">
+                                                        <Binding Path="Name" />
+                                                        <Binding Path="ActualVersion" />
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

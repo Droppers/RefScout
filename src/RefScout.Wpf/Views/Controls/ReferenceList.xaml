@@ -1,0 +1,141 @@
+﻿<UserControl
+    x:Class="RefScout.Wpf.Views.Controls.ReferenceList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RefScout.Wpf.Views.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Uc"
+    d:DesignHeight="200"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+    <UserControl.Resources />
+    <ItemsControl ItemsSource="{Binding References, ElementName=Uc}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border SnapsToDevicePixels="True" UseLayoutRounding="True">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Margin" Value="0,2,0,0" />
+                            <Setter Property="BorderThickness" Value="0,1,0,0" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource Brushes.Border}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}"
+                                             Value="{x:Null}">
+                                    <Setter Property="Margin" Value="0" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <DockPanel LastChildFill="True">
+                        <local:Icon
+                            Margin="0,1,8,0"
+                            Fit="True"
+                            Foreground="{DynamicResource Brushes.ForegroundSecondary}"
+                            IconName="{StaticResource Icon.Reference}"
+                            SnapsToDevicePixels="True"
+                            UseLayoutRounding="True">
+                            <local:Icon.Style>
+                                <Style TargetType="local:Icon">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Level}" Value="Default">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </local:Icon.Style>
+                        </local:Icon>
+                        <local:Icon
+                            Width="13"
+                            Height="13"
+                            Margin="2,0,9,0"
+                            Fit="True">
+                            <local:Icon.Style>
+                                <Style TargetType="local:Icon">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Level}" Value="Default">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Level}" Value="Info">
+                                            <Setter Property="IconName" Value="{StaticResource Icon.Info}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource Brushes.Info}" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Level}" Value="Warning">
+                                            <Setter Property="IconName" Value="{StaticResource Icon.Warning}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource Brushes.Warning}" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Level}" Value="Fatal">
+                                            <Setter Property="IconName" Value="{StaticResource Icon.Error}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource Brushes.Error}" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Level}" Value="Success">
+                                            <Setter Property="IconName" Value="{StaticResource Icon.Success}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource Brushes.Success}" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </local:Icon.Style>
+                        </local:Icon>
+                        <StackPanel>
+                            <DockPanel LastChildFill="True">
+                                <StackPanel
+                                    Margin="5,0,0,0"
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Right"
+                                    Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Version}" />
+                                    <TextBlock>
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding BindingRedirectStatus}"
+                                                                 Value="Default">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding BindingRedirectStatus}"
+                                                                 Value="Failed">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat=" &gt; {0}">
+                                                <Binding FallbackValue="0.0.0.0" Path="BindingRedirect.NewVersion" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </StackPanel>
+                                <TextBlock TextWrapping="Wrap">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="{Binding To.Name}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ReferencedBy, ElementName=Uc}"
+                                                             Value="True">
+                                                    <Setter Property="Text" Value="{Binding From.Name}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding Notes}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Foreground="{DynamicResource Brushes.ForegroundSecondary}"
+                                            Text="{Binding Message}"
+                                            TextWrapping="Wrap" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

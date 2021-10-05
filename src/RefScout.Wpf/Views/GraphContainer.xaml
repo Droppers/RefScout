@@ -1,0 +1,171 @@
+﻿<UserControl
+    x:Class="RefScout.Wpf.Views.GraphContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:controls="clr-namespace:RefScout.Wpf.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="600"
+    DataContext="{Binding Source={StaticResource VmLocator}, Path=GraphContainerViewModel}"
+    mc:Ignorable="d">
+    <Grid>
+        <!--  GraphViewer  -->
+        <controls:GraphViewer
+            GraphRenderFailed="OnGraphRenderFailed"
+            GraphRendered="OnGraphRendered"
+            HitNodeClicked="OnNodeClicked"
+            VectorPath="{Binding VectorPath}" />
+
+        <!--  Toolbar  -->
+        <Grid
+            Height="48"
+            Margin="10,0"
+            VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    Command="{Binding ToggleGraphDirection}">
+                    <controls:IconButton.Style>
+                        <Style TargetType="controls:IconButton">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.GraphTopBottom}" Value="True">
+                                    <Setter Property="Icon" Value="{StaticResource Icon.GraphTopBottom}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Settings.GraphTopBottom}" Value="False">
+                                    <Setter Property="Icon" Value="{StaticResource Icon.GraphLeftRight}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </controls:IconButton.Style>
+                </controls:IconButton>
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    Command="{Binding ToggleShowTargetFramework}"
+                    Icon="{StaticResource Icon.DotNet}">
+                    <controls:IconButton.Style>
+                        <Style TargetType="controls:IconButton">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.GraphShowTargetFramework}" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource Brushes.Foreground}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Settings.GraphShowTargetFramework}" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource Brushes.DotNet}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </controls:IconButton.Style>
+                </controls:IconButton>
+
+                <ComboBox
+                    Width="160"
+                    Margin="10,0"
+                    VerticalAlignment="Center"
+                    ItemsSource="{Binding VisualizeModes}"
+                    SelectedItem="{Binding SelectedVisualizeMode}">
+                    <b:Interaction.Triggers>
+                        <b:EventTrigger EventName="SelectionChanged">
+                            <b:InvokeCommandAction Command="{Binding VisualizeModeChanged}" />
+                        </b:EventTrigger>
+                    </b:Interaction.Triggers>
+                </ComboBox>
+
+                <controls:IconButton
+                    Width="38"
+                    Height="38"
+                    HorizontalAlignment="Right"
+                    Command="{Binding ExportGraph}"
+                    Icon="{StaticResource Icon.Save}" />
+            </StackPanel>
+        </Grid>
+
+        <!--  GraphViz not installed message  -->
+        <Border
+            d:IsHidden="True"
+            Background="{DynamicResource Brushes.Background}"
+            BorderThickness="0"
+            Visibility="{Binding Path=GraphVizNotInstalled, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel
+                MaxWidth="400"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+                <TextBlock
+                    Margin="20"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    To visualize the references GraphViz must be installed, install it either in the default installation directory
+                    or in the PATH environment variable.<LineBreak />
+                    <LineBreak />
+                    <Hyperlink
+                        Command="{Binding DownloadGraphViz}"
+                        Foreground="{DynamicResource Brushes.Foreground}"
+                        NavigateUri="https://graphviz.org/download/#windows"
+                        TextDecorations="Underline">
+                        https://graphviz.org/download/
+                    </Hyperlink>
+                </TextBlock>
+                <Button
+                    Padding="15,5"
+                    HorizontalAlignment="Center"
+                    Command="{Binding TryAgain}"
+                    Style="{StaticResource PrimaryButtonStyle}">
+                    I have installed GraphViz
+                </Button>
+                <TextBlock
+                    Margin="0,10"
+                    HorizontalAlignment="Center"
+                    Text="Or" />
+                <Button
+                    Padding="15,5"
+                    HorizontalAlignment="Center"
+                    Command="{Binding InstallForMe}"
+                    Style="{StaticResource ButtonStyle}">
+                    Install GraphViz for me
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!--  GraphViz loading and rendering progress  -->
+        <Border
+            d:IsHidden="True"
+            Background="{DynamicResource Brushes.Background}"
+            Visibility="{Binding LoadingMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Control
+                    HorizontalAlignment="Center"
+                    Template="{StaticResource LoadingSpinner}"
+                    Visibility="{Binding LoadingMessage, Converter={StaticResource NullToVisibilityConverter}}" />
+                <TextBlock
+                    Margin="20"
+                    Text="{Binding LoadingMessage}"
+                    TextAlignment="Center" />
+            </StackPanel>
+        </Border>
+
+        <!--  GraphViz error state  -->
+        <Border
+            d:IsHidden="True"
+            Background="{DynamicResource Brushes.Background}"
+            Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <controls:Icon
+                    Width="24"
+                    Fit="True"
+                    Foreground="{DynamicResource Brushes.Error}"
+                    IconName="{StaticResource Icon.Error}">
+                    <controls:Icon.RenderTransform>
+                        <ScaleTransform CenterX="12" CenterY="12" ScaleX="2" ScaleY="2" />
+                    </controls:Icon.RenderTransform>
+                </controls:Icon>
+                <TextBlock
+                    Margin="20"
+                    Text="{Binding ErrorMessage}"
+                    TextAlignment="Center" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

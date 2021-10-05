@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Styles/Icons.xaml" />
+        <ResourceDictionary Source="../Styles/Misc.xaml" />
+        <ResourceDictionary Source="../Styles/Window.xaml" />
+        <ResourceDictionary Source="../Styles/Buttons.xaml" />
+        <ResourceDictionary Source="../Styles/TabControl.xaml" />
+        <ResourceDictionary Source="../Styles/TreeView.xaml" />
+        <ResourceDictionary Source="../Styles/ScrollBar.xaml" />
+        <ResourceDictionary Source="../Styles/ComboBox.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource FabricComboBoxStyle}" TargetType="ComboBox" />
+    <!--  Apply defaults  -->
+    <!--<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockStyle}" />-->
+    <Style BasedOn="{StaticResource ItemsControlStyle}" TargetType="{x:Type ItemsControl}" />
+    <Style TargetType="{x:Type ScrollViewer}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>ref-analyzer</ToolCommandName>
+    <PackageOutputPath>..\..\_nupkg</PackageOutputPath>
+
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+
+    <TrimMode>Link</TrimMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.0-beta.74" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RefScout.Analyzer\RefScout.Analyzer.csproj" />
+    <ProjectReference Include="..\RefScout.Core\RefScout.Core.csproj" />
+    <ProjectReference Include="..\RefScout.Visualizers\RefScout.Visualizers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TrimmerRootDescriptor Include="TrimmerRoots.xml" />
+  </ItemGroup>
+</Project>

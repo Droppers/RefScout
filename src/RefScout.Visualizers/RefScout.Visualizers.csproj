@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetGraph" Version="2.6.0" />
+    <PackageReference Include="OpenSoftware.DgmlBuilder" Version="1.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RefScout.Analyzer\RefScout.Analyzer.csproj" />
+    <ProjectReference Include="..\RefScout.Core\RefScout.Core.csproj" />
+  </ItemGroup>
+
+</Project>

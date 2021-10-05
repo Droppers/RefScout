@@ -1,0 +1,279 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ReferenceAnalyzer.Desktop/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0-preview.7.21377.19",
+          "Microsoft.Toolkit.Mvvm": "7.1.0-preview1",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "ReferenceAnalyzer.Analyzer": "1.0.0",
+          "ReferenceAnalyzer.Visualizers": "1.0.0",
+          "SharpVectors": "1.7.6"
+        },
+        "runtime": {
+          "ReferenceAnalyzer.Desktop.dll": {}
+        }
+      },
+      "DotNetGraph/2.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/DotNetGraph.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0-preview.7.21377.19": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.37719"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/6.0.0-preview.7.21377.19": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0-preview.7.21377.19",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0-preview.7.21377.19"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.37719"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0-preview.7.21377.19": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.37719"
+          }
+        }
+      },
+      "Microsoft.Toolkit.Mvvm/7.1.0-preview1": {
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.1"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.31.10800"
+          }
+        }
+      },
+      "Mono.Cecil/0.11.4": {
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {
+            "assemblyVersion": "0.11.4.0",
+            "fileVersion": "0.11.4.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {
+            "assemblyVersion": "0.11.4.0",
+            "fileVersion": "0.11.4.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {
+            "assemblyVersion": "0.11.4.0",
+            "fileVersion": "0.11.4.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.dll": {
+            "assemblyVersion": "0.11.4.0",
+            "fileVersion": "0.11.4.0"
+          }
+        }
+      },
+      "OpenSoftware.DgmlBuilder/1.15.0": {
+        "runtime": {
+          "lib/netstandard2.0/OpenSoftware.DgmlBuilder.dll": {
+            "assemblyVersion": "1.14.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "SharpVectors/1.7.6": {
+        "runtime": {
+          "lib/net5.0-windows/SharpVectors.Converters.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Core.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Css.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Dom.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Model.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Gdi.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Runtime.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.7.21377.19": {
+        "runtime": {
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.37719"
+          }
+        }
+      },
+      "ReferenceAnalyzer.Analyzer/1.0.0": {
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "ReferenceAnalyzer.Core": "1.0.0",
+          "ReferenceAnalyzer.IPC": "1.0.0"
+        },
+        "runtime": {
+          "ReferenceAnalyzer.Analyzer.dll": {}
+        }
+      },
+      "ReferenceAnalyzer.Core/1.0.0": {
+        "runtime": {
+          "ReferenceAnalyzer.Core.dll": {}
+        }
+      },
+      "ReferenceAnalyzer.IPC/1.0.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0-preview.7.21377.19"
+        },
+        "runtime": {
+          "ReferenceAnalyzer.IPC.dll": {}
+        }
+      },
+      "ReferenceAnalyzer.Visualizers/1.0.0": {
+        "dependencies": {
+          "DotNetGraph": "2.6.0",
+          "OpenSoftware.DgmlBuilder": "1.15.0",
+          "ReferenceAnalyzer.Analyzer": "1.0.0",
+          "ReferenceAnalyzer.Core": "1.0.0"
+        },
+        "runtime": {
+          "ReferenceAnalyzer.Visualizers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ReferenceAnalyzer.Desktop/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DotNetGraph/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jxw5hIS3hTtEHKTk/M7ZnY4qhrgkTB9rLqy25tbFMT5gzT2mQhw5l+oGM/mwJb33YoFrIHB7E8V9xPZsVbtzJQ==",
+      "path": "dotnetgraph/2.6.0",
+      "hashPath": "dotnetgraph.2.6.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0-preview.7.21377.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mSbCV9IxL7ZXeVf53joMdjCiWilmpjPm2zyan8wRojblRtB1zyzh4IYWCjyT2hH2Jkp5k/3KfCD9yvTvGQrVCQ==",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0-preview.7.21377.19",
+      "hashPath": "microsoft.bcl.asyncinterfaces.6.0.0-preview.7.21377.19.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/6.0.0-preview.7.21377.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BjESHgE6sL2YfUsc7fyA6zWax/ByG0We+F5hRk9hvlSupFMzaMvKWhjAAzZnQG+tvqsrZxydrZtganxDpuqqeQ==",
+      "path": "microsoft.extensions.dependencyinjection/6.0.0-preview.7.21377.19",
+      "hashPath": "microsoft.extensions.dependencyinjection.6.0.0-preview.7.21377.19.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0-preview.7.21377.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-atV1M3Bmuc9+mIW1/AxgfYhZBH74P5897+sOq5zXQaNA/OBqAax1NQ/LZrIVqpFMYk5aPVv4vn2uirQ4Peuglg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0-preview.7.21377.19",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0-preview.7.21377.19.nupkg.sha512"
+    },
+    "Microsoft.Toolkit.Mvvm/7.1.0-preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UPsxUzYg21XHHNSfTvODppc+Z155kosWD/wDgQ8mvGw/E0fivtprIKH03sGELPrAQAmI5hv1Q3mWUR2YoL1HNQ==",
+      "path": "microsoft.toolkit.mvvm/7.1.0-preview1",
+      "hashPath": "microsoft.toolkit.mvvm.7.1.0-preview1.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+    },
+    "Mono.Cecil/0.11.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IC1h5g0NeJGHIUgzM1P82ld57knhP0IcQfrYITDPXlNpMYGUrsG5TxuaWTjaeqDNQMBDNZkB8L0rBnwsY6JHuQ==",
+      "path": "mono.cecil/0.11.4",
+      "hashPath": "mono.cecil.0.11.4.nupkg.sha512"
+    },
+    "OpenSoftware.DgmlBuilder/1.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d+7MalxBCm3IQCflzh866uG/c/7A8eEXPVPt7jjW/7A8qv1V+3ftcP7574dbWNdZFVKirsNdEcbxm5bnXcaUgA==",
+      "path": "opensoftware.dgmlbuilder/1.15.0",
+      "hashPath": "opensoftware.dgmlbuilder.1.15.0.nupkg.sha512"
+    },
+    "SharpVectors/1.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4mdmSPJCUdA+7ig8rMl4MbJ0qB/oDOByCmLhRdDjG54+sGIIYI004vkR4uPbWYsjn/Fgdi55s0vLqO2nLL0jDg==",
+      "path": "sharpvectors/1.7.6",
+      "hashPath": "sharpvectors.1.7.6.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.7.21377.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G9eKxgKE5UoyJdB4tpBFCWlgky34N11QDIjn92g6BwqII03yra4raegNNt3y3lmN6k+VDLIzgVMuddZ7LT6TEw==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0-preview.7.21377.19",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0-preview.7.21377.19.nupkg.sha512"
+    },
+    "ReferenceAnalyzer.Analyzer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReferenceAnalyzer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReferenceAnalyzer.IPC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReferenceAnalyzer.Visualizers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

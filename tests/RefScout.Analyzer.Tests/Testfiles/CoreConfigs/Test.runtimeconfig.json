@@ -1,0 +1,13 @@
+{
+  "runtimeOptions": {
+    "tfm": "net5.0",
+    "rollForward": "latestMajor",
+    "framework": {
+      "name": "Microsoft.WindowsDesktop.App",
+      "version": "5.0.9"
+    },
+    "configProperties": {
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false
+    }
+  }
+}

@@ -1,0 +1,30 @@
+﻿<Application
+    x:Class="RefScout.Wpf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:RefScout.Wpf.Converters"
+    xmlns:viewModels="clr-namespace:RefScout.Wpf.ViewModels"
+    Exit="OnExit"
+    Startup="OnStartup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="Themes/Light.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+
+                <ResourceDictionary Source="Styles/All.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <viewModels:ViewModelLocator x:Key="VmLocator" />
+
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:NullVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <converters:NullOrEmptyCollectionVisibilityConverter x:Key="NullOrEmptyCollectionVisibilityConverter" />
+            <converters:InverseNullOrEmptyCollectionVisibilityConverter
+                x:Key="InverseNullOrEmptyCollectionVisibilityConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
