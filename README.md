@@ -22,13 +22,13 @@
 <i>The application is still in-preview, and therefore may not function as intended.</i>
 
 **Windows**<br>
-[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-refscout-0.1.zip](refana-windows-0.1.zip) (Requires .NET 6.0, CLI+Desktop)<br>
-[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-refscout-0.1.zip](refana-windows-0.1.zip) (Self-contained, CLI)<br>
-[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-desktop-refscout-0.1.zip](refana-windows-0.1.zip) (Self-contained, Desktop, large: 120MB)<br>
+[win-refscout-0.1.zip](https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-refscout-0.1.zip) (Requires .NET 6.0, CLI+Desktop)<br>
+[win-contained-refscout-0.1.zip](https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-refscout-0.1.zip) (Self-contained, CLI)<br>
+[win-contained-desktop-refscout-0.1.zip](https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-desktop-refscout-0.1.zip) (Self-contained, Desktop)<br>
 
 **Linux**<br>
-[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-refscout-0.1.zip](refana-linux-0.1.zip) (Requires .NET 6.0, CLI)<br>
-[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-contained-refscout-0.1.zip](refana-linux-0.1.zip) (Self-contained, CLI)
+[linux-refscout-0.1.zip](https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-refscout-0.1.zip) (Requires .NET 6.0, CLI)<br>
+[linux-contained-refscout-0.1.zip](https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-contained-refscout-0.1.zip) (Self-contained, CLI)
 
 **dotnet tool**<br>
 `dotnet tool install -g refscout`
