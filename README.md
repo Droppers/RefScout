@@ -15,18 +15,20 @@
  - Interactive desktop application
  - Strong named assemblies
  - .NET Framework config parsing (probing paths, codebase, binding redirects)
- - Reports various conflicts: binding redirect misconfiguration, version mismatch, processor architecture mismatch, missing runtime versions, etc.
+ - Reports various conflicts: binding redirect misconfiguration, version mismatch, processor architecture mismatch, missing runtime versions, and more
 
 ## Install
 
+<i>The application is still in-preview, and therefore may not function as intended.</i>
+
 **Windows**<br>
-[win-RefScout-1.0.zip](refana-windows-0.1.zip) (Requires .NET 6.0, CLI+Desktop)<br>
-[win-contained-RefScout-1.0.zip](refana-windows-0.1.zip) (Self-contained, CLI)<br>
-[win-contained-desktop-RefScout-1.0.zip](refana-windows-0.1.zip) (Self-contained, Desktop, large: 120MB)<br>
+[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-refscout-0.1.zip](refana-windows-0.1.zip) (Requires .NET 6.0, CLI+Desktop)<br>
+[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-refscout-0.1.zip](refana-windows-0.1.zip) (Self-contained, CLI)<br>
+[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/win-contained-desktop-refscout-0.1.zip](refana-windows-0.1.zip) (Self-contained, Desktop, large: 120MB)<br>
 
 **Linux**<br>
-[linux-RefScout-1.0.zip](refana-linux-0.1.zip) (Requires .NET 6.0, CLI)<br>
-[linux-contained-RefScout-1.0.zip](refana-linux-0.1.zip) (Self-contained, CLI)
+[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-refscout-0.1.zip](refana-linux-0.1.zip) (Requires .NET 6.0, CLI)<br>
+[https://github.com/Droppers/AssemblyAnalyzer/releases/download/v-0.1-alpha/linux-contained-refscout-0.1.zip](refana-linux-0.1.zip) (Self-contained, CLI)
 
 **dotnet tool**<br>
 `dotnet tool install -g refscout`
@@ -44,8 +46,6 @@ Using the desktop application should speak for itself, otherwise you can find a 
 refscout assembly.exe
 refscout assembly.dll
 ```
-
-<i>For .NET Core applications supply RefScout with the Application.dll rather than the executable (Application.exe)</i>
 
 #### Options
 ```sh
@@ -85,7 +85,7 @@ DGML (Visual Studio graph)
 
 ## Screenshots
 
-Todo (maybe collapsible) 
+Will be added when UI is finalized.
 
 ## Detailed options
 These options apply to both the desktop application and the command-line application.
@@ -175,13 +175,13 @@ Assemblies are resolved by incorporating a heavily modified version of the assem
 When system assemblies are found locally for a .NET Framework application, they will always be analyzed as part of the analyzed application. 
 
 #### .NET Core runtime detection
-The locations that the application will look for .NET Core runtime are the default installation location or the DOTNET_ROOT environment variable. Determining which runtime version will be used when executing the application is based on using the roll-forward logic described in the dotnet design document. 
+The locations that the application will look for .NET Core runtime are the default installation location or the DOTNET_ROOT environment variable. Determining which runtime version will be used when running the application is based on using the roll-forward logic described in the dotnet design document.
 
 ## Why?
 
 To get more familiar with C#, WPF and .NET, since this is my first real C# project. Also, as part of my internship, one of my tasks was documenting the dependencies of .NET applications. However, I lacked a tool to generate a complete overview of an assembly and its references. I stumbled upon the popular AsmSpy tool and found it lacks many features. So I decided to try and create a tool to fill the gap of missing features and familiarize myself with how the runtime resolves assemblies.
 
-Compared to for example AsmSpy, RefScout has full support for binding redirects, codebase (local only), probing directories, strong-named assemblies, architecture mismatches, .NET Core (+ single file), detecting GAC unification, Linux support, and a desktop application.
+Compared to for example AsmSpy, a popular reference analyzer tool, RefScout has full support for binding redirects, codebase (local only), probing directories, strong-named assemblies, architecture mismatches, .NET Core (+ single file), detecting GAC unification, Linux support, and a desktop application.
 
 ## Contributing
 I am always open to contributions in this repository. However, make sure to create an issue beforehand to discuss the change. 
