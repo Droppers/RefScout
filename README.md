@@ -196,7 +196,7 @@ I am always open to contributions in this repository. However, make sure to crea
 ```
 MIT License
 
-Copyright (c) 2021 Joery Droppers (https://github.com/Droppers)
+Copyright (c) 2022 Joery Droppers (https://github.com/Droppers)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
