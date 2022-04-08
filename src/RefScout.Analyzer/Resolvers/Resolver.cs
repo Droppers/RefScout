@@ -25,7 +25,6 @@ internal abstract class Resolver : IResolver
     {
         _ = identity ?? throw new ArgumentNullException(nameof(identity));
 
-
         _strategies ??= GetResolverStrategies();
 
         foreach (var strategy in _strategies)

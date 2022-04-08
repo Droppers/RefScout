@@ -52,7 +52,7 @@ public abstract class Visualizer<TOptions>
         try
         {
             var directory = Path.GetDirectoryName(fileName);
-            if (directory != null)
+            if (!string.IsNullOrWhiteSpace(directory))
             {
                 Directory.CreateDirectory(directory);
             }

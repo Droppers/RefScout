@@ -41,7 +41,10 @@ internal class CompatibilityAnalyzer : ICompatibilityAnalyzer
 
     protected virtual void CheckAssembly(Assembly assembly)
     {
-        assembly.IsArchitectureMismatch = IsArchitectureMismatch(assembly, _context.EntryPoint);
+        if (assembly.Source is not AssemblySource.Shared)
+        {
+            assembly.IsArchitectureMismatch = IsArchitectureMismatch(assembly, _context.EntryPoint);
+        }
     }
 
     protected virtual void CheckReference(AssemblyRef reference)

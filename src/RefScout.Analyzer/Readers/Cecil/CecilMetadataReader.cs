@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Mono.Cecil;
 
@@ -45,7 +46,7 @@ internal class CecilMetadataReader : IMetadataReader
         // And: https://github.com/jbevain/cecil/issues/797
         if (architecture > (int)TargetArchitecture.AMD64)
         {
-            if (Environment.OSVersion.Platform == PlatformID.MacOSX)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 architecture ^= 0x4644;
             }

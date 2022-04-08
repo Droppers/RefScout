@@ -57,7 +57,7 @@ internal class CoreResolver : Resolver
         {
             new DirectoryResolverStrategy(_fileSystem, SearchDirectories),
             new CoreNuGetPackageResolverStrategy(_environment, _fileSystem, _targetFramework, _config.DepsFile),
-            new DirectoryResolverStrategy(_fileSystem, SearchDirectories)
+            new CoreSharedResolverStrategy(_fileSystem, _runtime, _config.RuntimePack)
         };
     }
 }
